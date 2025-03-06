@@ -1,0 +1,10 @@
+.createPost{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    img{
+        height: 80px;
+        width: 80px;
+    }
+}

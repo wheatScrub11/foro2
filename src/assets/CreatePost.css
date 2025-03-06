@@ -1,0 +1,74 @@
+.create-post{
+    background-color: rgb(0, 0, 0);
+    margin: 0 1em;
+    display: flex;
+    gap: 1em;
+    position: fixed;
+    width: 93%;
+    padding: 1em 0 0.5em 0;
+    border-bottom: 2px solid #ffff00;
+
+    .pfp-container{
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    .content-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .hint1{
+            color: #ffff00;
+            font-size: 1.3em;
+            width: 100%;
+        }
+        textarea{
+            color: white;
+            background-color: black;
+            border: none;             
+            border-bottom: 1px solid #ffffff72;
+            width: 100%; 
+            resize: none;
+            font-size: 1.4em;
+
+        }
+        textarea:focus {
+            outline: none;
+        }
+        .post-title{
+            height: 30px;
+        }
+        .post-desc{
+            height: 70px;
+        }
+
+        .btns-container{
+            display: flex;
+            justify-content: end;
+            gap: 10px;
+
+            button{
+                border: 1px solid black;
+                width: 100px;
+                height: 30px;
+                align-self: flex-end;
+                font-weight: 550;
+                margin: 5px 0 10px 0;
+            }
+
+            .btn-publicar{ 
+                background-color: #ffff00;
+            }
+
+            .btn-cancelar{
+                background-color: #d11e1e;
+            }
+        }
+
+
+    }
+}

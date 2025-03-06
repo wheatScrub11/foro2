@@ -21,8 +21,9 @@ const Post = () => {
       </div>
       <div className="bottom">
         <img className="commentsIcon" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="" />
-        <button className="comments">Comentarios</button>
+        <button onClick={() => prompt("Hola")} className="comments">Comentarios</button>
       </div>
+      <hr />
     </div>
   );
 };

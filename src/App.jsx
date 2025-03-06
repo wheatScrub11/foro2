@@ -1,41 +1,56 @@
-import { useEffect, useState } from 'react'
-import Post from './assets/Post'
+import { useEffect, useState } from "react";
+import Post from "./assets/Post";
+import CreatePost from "./assets/CreatePost";
+import ButtonCreatePost from "./assets/ButtonCreatePost";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [dataFromAppInventor, setDataFromAppInventor] = useState("vacio");
+  const [showCreateNewPost, setShowCreateNewPost] = useState(false);
 
-  const [dataFromAppInventor, setDataFromAppInventor] = useState('vacio');
+  const [userName, setUserName] = useState(null)
+  const [userPfpUrl, setUserPfpUrl] = useState(null)
 
-  // useEffect(() => {
-  //   // Read data from local storage
-  //   const data = localStorage.getItem('appInventorData');
-  //   if (data) {
-  //     setDataFromAppInventor(data);
-  //   }
+  const obtenerDatos = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const data = queryParams.get("data");
+    console.log(data);
 
-  // }, []);
-
-  const obtenerDatos = () =>{
-    const data = localStorage.getItem('appInventorData');
-    if (data) {
+    if (data){
+      const parts = data.split("^")
+      setUserName(parts[0])
+      setUserPfpUrl(parts[1].split("/revision")[0])
+  
+      console.log(parts[0], parts[1])
+  
       setDataFromAppInventor(data);
-    }else{
-      setDataFromAppInventor("error!!!")
     }
-  }
+
+  };
+
+
+  useEffect(() =>{
+    obtenerDatos()
+  }, [])
 
   return (
-    <div id='MAIN-CONTAINER'>
+    <div id="MAIN-CONTAINER">
       <div className="main">
-        <div>hola {dataFromAppInventor}</div>
-        <button onClick={obtenerDatos}>ObtenerDatos</button>
+        {/* <button onClick={obtenerDatos}>ObtenerDatos</button> */}
+        {/* <div style={{color: "white"}}>hola {dataFromAppInventor}</div> */}
+        {showCreateNewPost ? (
+          <CreatePost setShowCreateNewPost={setShowCreateNewPost} userPfpUrl={userPfpUrl} userName={userName}/>
+        ) : (
+          <ButtonCreatePost setShowCreateNewPost={setShowCreateNewPost}  />
+        )}
+        <Post />
+        <Post />
         <Post />
         <Post />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
