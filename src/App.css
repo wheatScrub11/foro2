@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#MAIN-CONTAINER{
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+
+  .main{
+    background-color: rgb(216, 254, 251);
+    height: 100%;
+  }
+}
