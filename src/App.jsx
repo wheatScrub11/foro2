@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Post from "./assets/Post";
 import CreatePost from "./assets/CreatePost";
+import { getPosts } from "../firebase";
 import ButtonCreatePost from "./assets/ButtonCreatePost";
 
 import "./App.css";
 
 function App() {
+  const [posts, setPosts] = useState(null)
   const [dataFromAppInventor, setDataFromAppInventor] = useState("vacio");
   const [showCreateNewPost, setShowCreateNewPost] = useState(false);
 
@@ -30,8 +32,25 @@ function App() {
   };
 
 
+  const getPostsFromFB =  () => {
+    getPosts((posts) => {
+      console.log("Posts:", posts);
+      setPosts(posts.reverse())
+      
+    });
+    
+    
+  };
+
+
+
+
   useEffect(() =>{
     obtenerDatos()
+  }, [])
+
+  useEffect(() =>{
+    getPostsFromFB()
   }, [])
 
   return (
@@ -44,10 +63,13 @@ function App() {
         ) : (
           <ButtonCreatePost setShowCreateNewPost={setShowCreateNewPost}  />
         )}
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+
+        {posts?.map((post) => (
+          <>
+            <Post post={post} userName={userName} userPfpUrl={userPfpUrl} key={post.id} />
+          </>
+        )  )}
+
       </div>
     </div>
   );

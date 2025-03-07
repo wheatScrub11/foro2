@@ -1,10 +1,11 @@
 .post{
     background-color: rgb(0, 0, 0);
-    margin: 2em 1em;
+    padding: 1em 1em;
     display: flex;
     flex-direction: column;
     gap: 1em;
     color: white;
+    width: 100vw;
 
     .top{
         display: flex;
@@ -17,8 +18,16 @@
         }
     
         .userName{
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
+        }
+
+        .postDate{
+            margin-left: auto;
+            text-align: right;
+            width: 60px;
+            word-break: break-all;
+            font-size: 0.8em;
         }
     
     }
@@ -31,7 +40,14 @@
 
         .postTitle{
             font-weight: 900;
-            font-size: 1.3em;
+            font-size: 1.28em;
+            word-break: break-all;
+
+            
+        }
+
+        .main-text{
+            word-break: break-all;
         }
     }
 
@@ -39,15 +55,158 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
 
         img{
             height: 50px;
             width: 50px;
         }
 
-        .comments{
-            height: 100px;
+        .commentsIcon{
+            height: 22px;
+            width: 20px;
+            margin-left: 2px;
+        }
+
+        .comments-count{
+            color: #ffff00;
+            font-weight: 800;
+            
+        }
+
+        .likesIcon{
+            height: 20px;
+            width: 20px;
+            margin-left: 2px;
+        }
+
+        .likes-count{
+            color: #d22f2f;
+            font-weight: 800;
+            
         }
     }
+
+    .comment-section-container{
+        height: min-content;
+        /* background-color: red; */
+        
+        .comment-section{
+            /* background-color: #61b422; */
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 1.2em;
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+    
+            .comment{
+                /* background-color: #ffffff0b; */
+                display: flex;
+                gap: 10px;
+    
+                .comment-left{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                    .comment-pfp{
+                        height: 40px;
+                        width: 40px;
+                        margin-bottom: 5px;
+                    }
+                    .comment-date{
+                        text-align: center;
+                        font-size: 0.6em;
+                        width: 50px;
+                    }
+                }
+    
+                .comment-right{
+                    display: flex;
+                    flex-direction: column;
+    
+                    .comment-user{
+                        font-size: 1.05em;
+                        font-weight: 800;
+                    }
+    
+                    .comment-text{
+                        font-size: 0.9em;
+                        
+                        width: 100%;
+                        word-break: break-all;
+                    }
+                }
+    
+            }
+    
+    
+        }
+
+        .input-comment{
+            /* -webkit-box-shadow: 2px 2px 19px #ffffff3a;
+
+            -moz-box-shadow: 2px 2px 19px #ffffff3a;
+
+            box-shadow: 2px 2px 19px #ffffff3a; */
+            
+
+
+
+            width: 100%;
+            border-top: 3px solid #ffff00;
+            padding: 1em 0;
+            display: flex;
+            gap: 5px;
+            align-items: flex-start;
+            justify-content: center;
+
+            
+
+            img{
+                height: 40px;
+                width: 40px;
+            }
+
+            .msgarea{
+                width: 100%;
+                background-color: black;
+                
+                textarea{
+                    width: 100%;
+                    height: 40px;
+                    font-size: 1.4em;
+                    border: none;
+                    background-color: black;
+                    border-bottom: 1px solid #ffffff72;
+                    resize: none;
+                    color: white;
+                    z-index: 10;
+                    
+                }
+                textarea:focus {
+                    outline: none;
+                }
+                .err1{
+                    color: #d22f2f;
+                    font-size: 0.9em;
+                }
+            }
+
+            
+
+            .btn-postComment{
+                background-color: #ffff00;
+                border: none;
+                padding: 0.9em 1em;
+                height: 40px;
+            }
+        }
+    }
+
 }
 
