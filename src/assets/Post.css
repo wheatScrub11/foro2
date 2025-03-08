@@ -41,13 +41,13 @@
         .postTitle{
             font-weight: 900;
             font-size: 1.28em;
-            word-break: break-all;
+            word-break: keep-all;
 
             
         }
 
         .main-text{
-            word-break: break-all;
+            word-break: keep-all;
         }
     }
 
@@ -138,7 +138,7 @@
                         font-size: 0.9em;
                         
                         width: 100%;
-                        word-break: break-all;
+                        word-break: keep-all;
                     }
                 }
     
