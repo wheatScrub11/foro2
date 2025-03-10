@@ -3,6 +3,8 @@ import Post from "./assets/Post";
 import CreatePost from "./assets/CreatePost";
 import { getPosts } from "../firebase";
 import ButtonCreatePost from "./assets/ButtonCreatePost";
+import interknotLogo from './icons/interknot.png';
+
 
 import "./App.css";
 
@@ -63,6 +65,11 @@ function App() {
         ) : (
           <ButtonCreatePost setShowCreateNewPost={setShowCreateNewPost}  />
         )}
+        <div className="interknot-container">
+          --------------------------
+          <img src={interknotLogo} className="internot-logo" alt="" />
+          --------------------------
+        </div>
 
         {posts?.map((post) => (
           <>

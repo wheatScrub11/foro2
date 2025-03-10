@@ -16,7 +16,32 @@
 
   .main{
     background-color: #000000;
+    background: 
+    linear-gradient(
+      to right,
+      black 50%,
+      rgba(255, 238, 0, 0.036) 50%
+    );
+  background-size: 13px 100%; /* Rayas verticales */
     height: 100%;
     position: relative;
+
+    .interknot-container{
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      color: #ffff00;
+      
+      
+
+      .internot-logo{
+        
+        width: 55px;
+        margin: 1em 0 0 0;
+      }
+    }
+
   }
 }
