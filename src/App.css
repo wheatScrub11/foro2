@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+html{
+  background-color: #000000;
+}
+
 #MAIN-CONTAINER{
   background-color: rgb(0, 0, 0);
   display: flex;
@@ -16,12 +20,12 @@
 
   .main{
     background-color: #000000;
-    background: 
+    /* background: 
     linear-gradient(
       to right,
       black 50%,
       rgba(255, 238, 0, 0.036) 50%
-    );
+    ); */
   background-size: 13px 100%; /* Rayas verticales */
     height: 100%;
     position: relative;
@@ -41,7 +45,23 @@
         width: 55px;
         margin: 1em 0 0 0;
       }
+
+
     }
 
+  }
+  .interknot-container::before{
+    content: "";
+    background-color: #fff200;
+    height: 2px;
+    width: 100%;
+    display: block;
+  }
+  .interknot-container::after{
+    content: "";
+    background-color: #fff200;
+    height: 2px;
+    width: 100%;
+    display: block;
   }
 }

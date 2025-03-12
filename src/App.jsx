@@ -66,9 +66,9 @@ function App() {
           <ButtonCreatePost setShowCreateNewPost={setShowCreateNewPost}  />
         )}
         <div className="interknot-container">
-          --------------------------
+          
           <img src={interknotLogo} className="internot-logo" alt="" />
-          --------------------------
+          
         </div>
 
         {posts?.map((post) => (
