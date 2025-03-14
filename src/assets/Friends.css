@@ -1,0 +1,258 @@
+.Friends{
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+
+    .title{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 3px solid yellow;
+        
+
+        .t{
+            color: yellow;
+            font-size: 2em;
+            font-weight: 800;
+            margin-left: 20px;
+        }
+
+        img{
+            height: 40px;
+            width: 40px;
+            justify-self: flex-end;
+            margin: 0.5em 5px;
+        }
+    }
+
+    .sides{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.037);
+        position: relative;
+        display: flex;
+        
+        .left{
+            height: 100%;
+            position: relative;
+            width: 100%;
+            background-color: #ffff0008;
+            
+            
+            
+
+            
+            .search-container{
+                margin: 10px 5px;
+                height: 40px;
+
+                input{
+                    height: 100%;
+                    width: 75%;
+                    border: none;
+                }
+                input:focus{
+                    outline: none;
+                }
+                button{
+                    height: 100%;
+                    width: 25%;
+                    background-color: yellow;
+                    color: rgb(0, 0, 0);
+                    border: none;
+                    border-left: 1px solid rgba(0, 0, 0, 0.437);
+                }
+            }
+            .friendlist-container{
+                height: 100%;
+                max-height: 100%;
+                
+                
+
+                .three-lines-c{
+                    background-color: #fffce61a;
+
+                    .three-lines-icon{
+                        width: 40px;
+                        height: 40px;
+                        margin: 5px 0 0 5px;
+                        
+                    }
+                }
+                
+
+                
+                height: calc(100% - 105px);
+                width: 100%;
+                
+                display: flex;
+                overflow-y: scroll;
+                flex-direction: column;
+                
+                
+    
+            }
+
+            .exit-icon-container{
+                width: 50px;
+                height: 50px;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+
+            }
+        }
+        .right{
+            background-color: rgb(0, 0, 0);
+            width: calc(100% - 50px);
+            right: 0;
+            height: 100%;
+            
+            position: absolute;
+            display: grid;
+            grid-template-rows: 50px auto 50px;
+            border-left: 1px solid #ffff006a;
+            
+
+            .friend{
+                
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                font-weight: 800;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.264);
+                
+                .f-pfp{
+                    height: 50px;
+                    width: 50px;
+                }
+                .f-name{
+                    font-size: 1.3em;
+                    background-color: rgb(0, 0, 0);
+                    height: fit-content;
+                    color: white;
+                }
+                
+            }
+            .chat-container{
+                padding: 10px 0;
+                background-color: rgb(0, 0, 0);
+                overflow-y: scroll;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                
+                
+
+                .message{
+                    background-color: rgb(0, 0, 0);
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                    flex-wrap: wrap;
+                    
+                    
+
+                    .m-text{
+                        
+                        max-width: 70%;
+                        height: fit-content;
+                        ;
+                        
+                        background-color: rgb(224, 255, 51);
+                        word-break: keep-all;
+                        word-wrap: break-word;
+                        padding: 10px;
+                        border-radius: 5px;
+                        
+                    }
+                    .t-w{
+                        background-color: white;
+                    }
+                    .user-i{
+                        width: fit-content;
+                        padding: 0 5px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center ;
+                        margin-bottom: auto;
+                        
+                        img{
+                            width: 35px;
+                            height: 35px;
+                            margin-bottom: 3px;
+                        }
+
+                        .m-date{
+                            width: min-content;
+                            font-size: 0.6em;
+                            text-align: center;
+                            color: white;
+                        }
+                    }
+                }
+
+                .t-l{
+                    flex-direction: row-reverse;
+                    text-align: left;
+                }
+                .t-r{
+                    text-align: right;
+                }
+
+            }
+
+            .bottom-container{
+                background-color: rgb(0, 0, 0);
+                display: flex;
+                border-top: 4px solid yellow;
+                
+                
+                .jjj{
+                    flex-grow: 1;
+                    
+                    
+                    border: none;
+                    border-top: 1px solid #000000a8;
+ 
+                }
+                .jjj:focus{
+                    outline: none;
+                    font-size: 1.2em;
+                    resize: none;
+                    
+                }
+                button{
+                    height: fit-content;
+                    font-size: 1em;
+                    padding: 5px 15px;
+                    height: 100%;
+                    background-color: yellow;
+                    border: none;
+                    border-left: 1px solid #000000a8;
+                    border-top: 1px solid #000000a8;
+                    
+                    
+                }
+            }    
+        }
+    }
+    
+
+
+}

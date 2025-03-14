@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { doc, Firestore, getFirestore, onSnapshot, query, setDoc } from "firebase/firestore";
+import { doc, Firestore, getDoc, getFirestore, onSnapshot, query, setDoc } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { cloneElement } from "react";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -85,3 +86,84 @@ export const getPosts = (callback) => {
 export const uploadComment = async (id, data) =>{
   await setDoc(doc(db, "posts", id), data)
 }
+
+
+export const checkIfUserChatExists = async (callback) =>{
+  try{
+    const collectionRef = collection(db, "chats")
+
+    const qS = await getDocs(collectionRef)
+
+    console.log(qS)
+    callback(qS)
+  } catch(err){
+    console.log(err)
+  }
+}
+
+export const addFriendToChat = async (customId, data) =>{
+  try {
+
+    const docRef = doc(db, "chats", customId);
+
+    await setDoc(docRef, data);
+
+    console.log("Document added with ID:");
+  } catch (e) {
+    console.error("Error adding document:", e);
+  }
+}
+
+
+
+
+
+export const getChats = (callback) => {
+  const q = query(collection(db, "chats"));
+
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const chats = [];
+    querySnapshot.forEach((doc) => {
+      chats.push({ id: doc.id, ...doc.data() });
+    });
+    callback(chats); // Pass the data to the callback
+  });
+
+  return unsubscribe; // Return the unsubscribe function if needed
+};
+
+
+export const addMessage = async ( docID, data) =>{
+  try {
+      const docRef = doc(db, "chats", docID);
+  
+      await setDoc(docRef, data);
+  
+      console.log("Document added with ID:", docID);
+    } catch (e) {
+      console.error("Error adding document:", e);
+    }
+  }
+
+  export const getSpecificDoc = async (collectionName, docId) => {
+    try {
+      // Create a reference to the document
+      const docRef = doc(db, collectionName, docId);
+  
+      // Fetch the document
+      const docSnap = await getDoc(docRef);
+  
+      // Check if the document exists
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        return docSnap.data(); // Return the document data
+      } else {
+        console.log("No such document!");
+        return null; // Return null if the document doesn't exist
+      }
+    } catch (error) {
+      console.error("Error getting document:", error);
+      throw error; // Handle errors
+    }
+  };
+

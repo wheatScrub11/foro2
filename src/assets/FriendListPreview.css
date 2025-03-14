@@ -1,0 +1,46 @@
+.friendlistpreview{
+    display: flex;
+    
+    width: 100%;
+    background-color: #fffce61a;
+    align-items:   center;
+    margin-bottom: 5px;
+    
+
+    .pfp-container{
+        margin-right: 0.5em;
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        overflow: hidden;
+        margin-right: auto;
+        align-self: center;
+        .user-name{
+            font-size: 1.3em;
+            color: white;
+            font-weight: 600;
+
+        }
+        .last-message{
+            color: white;
+        }
+    }
+    .last-msg-date{
+        height: fit-content;
+        width: 20%;
+        word-break: normal;
+        text-align: right;
+        
+        justify-self: end;
+        font-size: 0.7em;
+        color: white;
+        margin-right: 5px;
+
+    }
+}

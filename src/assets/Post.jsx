@@ -118,9 +118,9 @@ const Post = ({post, userName, userPfpUrl}) => {
       </div>
       <div className="bottom">
         <img className="commentsIcon" onClick={() => setShowCommentSection(!showCommentSection)} src={commentsIcon} alt="" />
-        <div className="comments-count">{post.postComments.length}</div>
+        <div className="comments-count">{post.postComments?.length}</div>
         <img className="likesIcon" src={wLikeIcon} onClick={doLike} alt="" />
-        <div className="likes-count">{post.postLikes.length}</div>
+        <div className="likes-count">{post.postLikes?.length}</div>
       </div>
 
       {showCommentSection && (

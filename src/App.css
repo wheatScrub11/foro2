@@ -26,7 +26,7 @@ html{
       black 50%,
       rgba(255, 238, 0, 0.036) 50%
     ); */
-  background-size: 13px 100%; /* Rayas verticales */
+    background-size: 13px 100%; /* Rayas verticales */
     height: 100%;
     position: relative;
 
@@ -47,6 +47,14 @@ html{
       }
 
 
+    }
+
+    .openfriends-icon{
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      bottom: 120px;
+      right: 14px;
     }
 
   }
